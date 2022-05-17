@@ -1,0 +1,64 @@
+
+    .card {
+    box-shadow: 0 4px 8px 0 rgba(29, 28, 28, 0.2);
+    /* max-width: 300px; */
+    border-radius: 1%;
+    border:2px solid #8e8383;
+    margin-left: auto;
+    text-align:center;
+    font-family: 'Noto Sans JP', sans-serif;
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    }
+
+    .make {
+    color: rgb(101, 89, 89);
+    font-size: 20px;
+    }
+
+    .card button {
+    border: none;
+    outline: 0;
+    padding: 10px;
+    color: white;
+    background-color: rgb(49, 48, 48);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 20px;
+    }
+
+    .card button:hover {
+        opacity: 0.7;
+    }
+
+    #container:after {
+    content: "";
+    display: table;
+    clear: both;
+    } 
+    
+    .title{
+        font-family: 'Righteous', cursive;
+        font-size: 50px;
+        color: #000000;
+    }
+
+    .inputInfo{
+        font-family: 'Righteous', cursive;
+        font-size: 30px;
+        color: rgb(56, 53, 48);
+    }
+
+    #rangeNum{
+        font-family: 'Righteous', cursive;
+        font-size: 30px;
+        color: rgb(56, 53, 48);
+    }
+
+    #numberRange{
+        font-family: 'Righteous', cursive;
+        font-size: 20px;
+        color: rgb(76, 69, 56);
+    }

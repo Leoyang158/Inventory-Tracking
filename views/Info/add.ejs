@@ -1,0 +1,102 @@
+<% layout('layouts/boilerplate')%>
+<style>
+    .card {
+    box-shadow: 0 4px 8px 0 rgba(29, 28, 28, 0.2);
+    /* max-width: 300px; */
+    border-radius: 1%;
+    border:2px solid #8e8383;
+    margin-left: auto;
+    text-align:center;
+    font-family: 'Noto Sans JP', sans-serif;
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    }
+
+    .make {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    }
+
+    .card button {
+    border: none;
+    outline: 0;
+    padding: 10px;
+    color: white;
+    background-color: rgb(49, 48, 48);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 20px;
+    }
+
+    .card button:hover {
+        opacity: 0.7;
+    }
+
+    #container:after {
+    content: "";
+    display: table;
+    clear: both;
+    } 
+    
+    .title{
+        font-family: 'Righteous', cursive;
+        font-size: 50px;
+        color: #000000;
+    }
+
+    .inputInfo{
+        font-family: 'Righteous', cursive;
+        font-size: 30px;
+        color: rgb(0, 0, 0);
+    }
+
+    #rangeNum{
+        font-family: 'Righteous', cursive;
+        font-size: 30px;
+        color: rgb(0, 0, 0);
+    }
+
+    #numberRange{
+        font-family: 'Righteous', cursive;
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+    }
+
+    img{
+        height:300px;
+        width:auto;/*maintain aspect ratio*/
+        max-width:500px;
+    }
+</style>
+<h1 class="title">Adding Your Item To Inventory</h1>
+<br>
+<form id="searchForm">
+    <div>
+        <label for="item" class="inputInfo">Enter Items</label>
+        <input class="form-control" type="text" name="item" placeholder="Eg. Pencil">
+    </div>
+
+    <br>
+    <div>
+        <label for="amount" class="inputInfo">Enter Amount </label>
+        <input class="form-control" type="text" name="amount" placeholder="Eg. 1, 2, 3">
+    </div>
+    <br>
+
+    <div>
+        <label for="startedyear" class="inputInfo">Enter Started Date</label>
+        <input class="form-control" type="text" name="startedyear" placeholder="Eg. 2017">
+    </div>
+    <br>
+    <div>
+        <label for="endedyear" class="inputInfo">Enter Ended Date</label>
+        <input class="form-control"  type="text" name="endedyear" placeholder="Eg. 2018">
+    </div>
+    <br>
+
+    <input class="btn btn-secondary" type="reset" value="Reset">
+    <input class="btn btn-primary" type="submit" value="Submit">
+</form>
+<br>

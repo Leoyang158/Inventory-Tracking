@@ -1,0 +1,53 @@
+<% layout('layouts/boilerplate')%>
+<style>
+    #allList{
+        font-size: 40px;
+        font-weight: lighter;
+    }
+</style>
+<div class="row">
+    <h1 class="text-center">New Vehicle</h1>
+    <div class="col-6 offset-3">
+        <form action="/lists" method="POST" novalidate class="validated-form">
+            <div class="mb-3">
+                <label class="form-label" for='model'> Model </label>
+                <input class="form-control" type="text" id="model" name=car[model]" required>
+                <div class="valid-feedback">
+                    Looks Wonderful!!!
+                </div>
+            </div>
+            <div class="mb-3">        
+                <label class="form-label" for='year'> Year </label>
+                <input class="form-control" type="text" id="year" name="car[year]" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for='make'> Make </label>
+                <input class="form-control" type="text" id="make" name="car[make]" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for='type'> Type </label>
+                <input class="form-control" type="text" id="type" name="car[type]" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="url">Picture URL</label>
+                <input class="form-control" type="text" id="url" name="car[url]" >
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>  
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" id="description" name="car[description]"
+                    required></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Add New Car</button>
+            </div>
+        </form>
+        <a href="/lists" id="allList">All Lists</a>
+    </div>
+</div>
+

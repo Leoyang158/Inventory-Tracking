@@ -1,0 +1,29 @@
+{
+  "name": "carweb",
+  "version": "1.0.0",
+  "description": "For Searching Vehicles",
+  "main": "index.js",
+  "scripts": {
+    "index": "nodemon index.js"
+  },
+  "keywords": [
+    "SFC"
+  ],
+  "author": "Linjian Yang",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "connect-flash": "^0.1.1",
+    "ejs-mate": "^3.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "joi": "^17.4.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.12.11",
+    "nodemon": "^2.0.7",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.1.0",
+    "request": "^2.88.2"
+  }
+}

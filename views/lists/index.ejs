@@ -1,0 +1,37 @@
+<% layout('layouts/boilerplate')%>
+<style>
+    #listTitle{
+        font-family: 'Righteous', cursive;
+        font-size: 80px;
+        color: #000000;
+    }
+
+    #card{
+        font-family: 'Righteous', cursive;
+        color: #1d1a1a;
+        border-radius: 1%;
+        border: aqua;
+    }
+
+    #cardBody{
+        font-size: 40px;
+    }
+
+    #newButton{
+        font-family: 'Righteous', cursive;
+    }
+</style>
+<h1 id="listTitle">All Cars</h1>
+<br>
+
+<% for (let car of cars){ %>
+<div class="card w-75" id="card">
+    <div class="card-body">
+      <h5 class="card-title" id="cardBody"><%= car.model %></h5>
+      <p class="card-text">Total Reviews: <%= car.reviews.length %></p>
+      <a href="/lists/<%= car._id%>" class="btn btn-primary">Take a Looks</a>
+    </div>
+</div>
+<br>
+<% }%>
+<a href="/lists/new" type="button" class="btn btn-primary btn-lg btn-block" id="newButton">Build Your Own </a>
