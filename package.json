@@ -1,7 +1,7 @@
 {
   "name": "carweb",
   "version": "1.0.0",
-  "description": "For Searching Vehicles",
+  "description": "For Storing Items",
   "main": "index.js",
   "scripts": {
     "index": "nodemon index.js"
