@@ -6,7 +6,7 @@ const catchAsync = require('../utils/catchAsync');
 const ExpressError = require('../utils/ExpressError');
 
 router.get('/', isLoggedIn, (req, res) => {  
-    res.render('info/add');
+    res.render('Info/add');
 });
 
 router.post('/', isLoggedIn, catchAsync(async(req, res) => {
