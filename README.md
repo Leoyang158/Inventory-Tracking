@@ -1,6 +1,7 @@
 # Inventory Tracking
 Welcome to Inventory Tracking
 This is my personal project for Shopify Fall Intern Application
+You can add your items to the list and share the items with descriptions with others using this application. More importantly, you can leave comments on other people's items and rate them with a like.
 
 # About 
 Hello and Welcome to Inventory Tracking. 
