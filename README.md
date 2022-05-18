@@ -1,6 +1,6 @@
 # Inventory Tracking
 Welcome to Inventory Tracking
-This is my personal project for Shopify Fall Intern
+This is my personal project for Shopify Fall Intern Application
 
 # About 
 Hello and Welcome to Inventory Tracking. 
