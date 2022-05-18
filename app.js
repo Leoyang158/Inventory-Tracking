@@ -28,12 +28,22 @@ const searchRoute = require('./routes/search');
 const reviewsRoute = require('./routes/reviews');
 
 //connecting to MongoDB 
-mongoose.connect('mongodb://localhost:27017/vehicleShow', { 
-    useNewUrlParser: true, 
-    useUnifiedTopology: true,   
+// mongoose.connect('mongodb://localhost:27017/vehicleShow', { 
+//     useNewUrlParser: true, 
+//     useUnifiedTopology: true,   
+//     useCreateIndex: true,
+//     useFindAndModify: false
+// });
+mongoURI = "mongodb+srv://Linjian:fallIntern@inventorycluster.hg9rb.mongodb.net/?retryWrites=true&w=majority";
+
+mongoose.connect(mongoURI, {
+    useNewUrlParser: true,
     useCreateIndex: true,
-    useFindAndModify: false
+    useUnifiedTopology: true,
 });
+
+// Set useFindandModify to be false
+mongoose.set('useFindAndModify', false);
 
 //validation for the conenction with MongoDB
 const db = mongoose.connection;
