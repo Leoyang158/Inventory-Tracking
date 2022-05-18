@@ -22,7 +22,7 @@ router.route('/:id')
     // each item has different id, and each id represents diff of pages 
     .get(catchAsync(lists.showItem))  
     // updating a item info
-    .put(isLoggedIn, isAuthor, validateItem, catchAsync(lists.validateItem))
+    .put(isLoggedIn, isAuthor, validateItem, catchAsync(lists.updateItem))
     // delete a item page 
     .delete(isLoggedIn, isAuthor, catchAsync (lists.deleteItem));
 

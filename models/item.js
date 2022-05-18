@@ -4,26 +4,11 @@ const Review = require('./review')
 const Schema = mongoose.Schema;
 
 const itemSchema = new Schema({
-    // year: String,
-    // make: String,
-    // model: String,
-    // type: String,
-    // url: String,
-    // description: String,
-    // author: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'User'
-    // },
-    // reviews: [
-    //     {
-    //         type: Schema.Types.ObjectId,
-    //         ref: 'Review'
-    //     }
-    // ]
     itemName: String, 
     amount: Number, 
     startDate: String,
     expireDate: String, 
+    description: String,
     author: {
         type: Schema.Types.ObjectId,
         ref: 'User'

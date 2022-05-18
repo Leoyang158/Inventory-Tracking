@@ -2,38 +2,37 @@
 <div class="row">
     <h1 class="text-center">Edit Item</h1>
     <div class="col-6 offset-3">
-        <form action="/lists/<%=car._id%>?_method=PUT" method="POST">
+        <form action="/lists/<%=good._id%>?_method=PUT" method="post">
             <div class="mb-3">
-                <label class="form-label" for="year">Item Name</label>
-                <input class="form-control" type="text" id="year" name="item[item]"
-                    value="<%=car.year %>">
+                <label class="form-label" for="item[itemName]">Item Name</label>
+                <input class="form-control" type="text" id="year" name="item[itemName]"
+                    value="<%=good.itemName %>">
             </div>
             <div class="mb-3">
                 <label class="form-label" for="make">Amount</label>
                 <input class="form-control" type="number" id="make" name="item[amount]"
-                    value="<%=car.make %>">
+                    value="<%=good.amount %>">
             </div>
             <div class="mb-3">
-                <label class="form-label" for="model">Started Date</label>
-                <input class="form-control" type="date" id="model" name="item[startedDate]"
-                    value="<%=car.model %>">
+                <label class="form-label" for="item[startDate]">Started Date</label>
+                <input class="form-control" type="date" id="model" name="item[startDate]"
+                    value="<%=good.startDate %>">
             </div>
             <div class="mb-3">
-                <label class="form-label" type">Expired Date</label>
-                <input class="form-control" type="date" id="type" name="item[expiredDate]"
-                    value="<%=car.type %>">
+                <label class="form-label" for="item[expireDate]">Expired Date</label>
+                <input class="form-control" type="date" id="type" name="item[expireDate]"
+                    value="<%=good.expireDate %>">
             </div>
-
             <div class="mb-3">
-                <label class="form-label" for="description">Description</label>
+                <label class="form-label" for="item[description]">Description</label>
                 <textarea class="form-control" type="text" id="description"
-                    name="car[description]"><%= car.description%></textarea>
+                    name="item[description]"><%=good.description%></textarea>
             </div>
             <div class="mb-3">
-                <button class="btn btn-info">Update Item</button>
+                <button class="btn btn-info">Update</button>
             </div>
         </form>
-        <a href="/lists/<%= car._id%>">Back To Car</a>
+        <a href="/lists/<%= good._id%>">Back To Item</a>
 
     </div>
 </div>

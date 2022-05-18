@@ -26,8 +26,8 @@ module.exports.validateItem = (req, res, next) => {
 
 module.exports.isAuthor = async(req, res, next) => {
     const { id } = req.params;
-    const car = await Item.findById(id);
-    if(!car.author.equals(req.user._id)){ //check whether the user is the same first, if not generate an error
+    const item = await Item.findById(id);
+    if(!item.author.equals(req.user._id)){ //check whether the user is the same first, if not generate an error
         req.flahs('error', 'You do not have permission to do that!!!')
         return res.redirect('/lists/${id}')
     }

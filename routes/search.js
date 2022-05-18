@@ -5,34 +5,25 @@ const { isLoggedIn, isAuthor } = require('../middleware'); //cannot book new fli
 const catchAsync = require('../utils/catchAsync');
 const ExpressError = require('../utils/ExpressError');
 
-router.get('/', (req, res) => {  
+router.get('/', isLoggedIn, (req, res) => {  
     res.render('info/add');
 });
 
 router.post('/', isLoggedIn, catchAsync(async(req, res) => {
-    // const { year, make, model, type, url} = req.params;
-    // const newCar = new Vehicle({
-    //     author: req.user._id,
-    //     year: '1998',
-    //     make: make,
-    //     model: model,
-    //     type: type,
-    //     url: url
-    // });
-    // const newCar = new Item(req.body.item);
-    // newCar.author = req.user._id;
-    const { item, amount, startDate, expireDate} = req.params;
+    
+    // const { item, amount, startDate, expireDate} = req.params;
+
     const newItem = new Item({
         author: req.user._id,
-        amount: amount,
-        item: item,
-        startDate: startDate, 
-        expireDate: expireDate,
+        amount: req.body.item.amount,
+        itemName: req.body.item.itemName,
+        startDate: req.body.item.startDate, 
+        expireDate: req.body.item.expireDate,
+        description: req.body.item.description,
     })
-
     await newItem.save();
     req.flash('success','Successfully!');
-    res.redirect("/add");
+    res.redirect("/search");
 }))
 
 

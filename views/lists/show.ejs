@@ -4,15 +4,15 @@
 <div class="row">
     <div class="col-6">
         <div class="card mb-3">
-                <img src="<%= good.url %>" class="card-img-top" alt="Loading">
             <div class="card-body">
-                <h3 class="card-text"><%= good.item%></h3>
+                <h3 class="card-text"><%= good.itemName%></h3>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Item Amount: <%= good.amount %></li>
-                <li class="list-group-item">Start Date: <%= good.startedDate %></li>
-                <li class="list-group-item">Ended Date: <%= good.expiredDate %></li>
+                <li class="list-group-item">Start Date: <%= good.startDate %></li>
+                <li class="list-group-item">Ended Date: <%= good.expireDate %></li>
                 <li class="list-group-item">Like by <%= good.author.username %></li>
+                <li class="list-group-item">Comment: <%= good.description %></li>
             </ul>
             <% if( currentUser && good.author.equals(currentUser._id)) { %>
             <div class="card-body">
@@ -23,7 +23,7 @@
             </div>
             <% } %>
             <div class="card-footer text-muted">
-                4 days ago
+                Today
             </div>
         </div>
 
@@ -77,4 +77,5 @@
         <% } %>
     </div>
 </div>
-
+<br>
+<br>

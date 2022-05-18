@@ -24,14 +24,15 @@
 <h1 id="listTitle">All Items</h1>
 <br>
 
-<% for (let car of cars){ %>
+<% for (let item of items){ %>
 <div class="card w-75" id="card">
     <div class="card-body">
-      <h5 class="card-title" id="cardBody"><%= car.model %></h5>
-      <p class="card-text">Total Reviews: <%= car.reviews.length %></p>
-      <a href="/lists/<%= car._id%>" class="btn btn-primary">Take a Looks</a>
+      <h5 class="card-title" id="cardBody"><%= item.itemName %></h5>
+      <p class="card-text">Total Reviews: <%= item.reviews.length %></p>
+      <a href="/lists/<%= item._id%>" class="btn btn-primary">Details</a>
     </div>
 </div>
 <br>
 <% }%>
-<a href="/lists/new" type="button" class="btn btn-primary btn-lg btn-block" id="newButton">Build Your Own </a>
+
+<a href="/lists/new" type="button" class="btn btn-primary btn-lg btn-block" id="newButton"> Add Your Own Item </a>

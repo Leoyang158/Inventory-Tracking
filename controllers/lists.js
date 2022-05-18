@@ -13,7 +13,7 @@ module.exports.createItem = async (req, res, next) => {
     const good = new Item(req.body.good);
     good.author = req.user._id;
     await good.save();
-    req.flash('success', 'Successfully make a new car');
+    req.flash('success', 'Successfully make a new item');
     res.redirect(`/lists/${good._id}`)
 }
 
@@ -42,10 +42,12 @@ module.exports.editItem = async (req, res) => {
     res.render('lists/edit', { good });
 }
 
-module.exports.validateItem = async (req, res) => {
+module.exports.updateItem = async (req, res) => {
+    console.log("10");
+    console.log(req.body.item);
     const { id } = req.params;
-    const good = await Vehicle.findByIdAndUpdate(id, { ...req.body.item });
-    req.flash('success', 'Successfully updated vehicle');
+    const good = await Item.findByIdAndUpdate(id, { ...req.body.item });
+    req.flash('success', 'Successfully updated item');
     res.redirect(`/lists/${good._id}`)
 }
 

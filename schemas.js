@@ -2,17 +2,12 @@ const Joi = require('joi');
 const { number } = require('joi');
 
 module.exports.itemSchema = Joi.object({
-    car: Joi.object({
-        // year: Joi.number().required().min(0),
-        // make: Joi.string().required(),
-        // model: Joi.string().required(),
-        // url: Joi.string().required(),
-        // description: Joi.string().required(),
-        amount: Joi.string().required(),
-        item: Joi.string().required(),
-        startDate: Joi.string().required(),
-        expireDate: Joi.string().required(),
-
+    item: Joi.object({
+        description: Joi.string().required(),
+        amount: Joi.number().required(),
+        itemName: Joi.string().required(),
+        startDate: Joi.date().required(),
+        expireDate: Joi.date().required(),
     }).required()
 });
 

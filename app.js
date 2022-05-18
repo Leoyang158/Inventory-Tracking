@@ -19,11 +19,7 @@ const { isLoggedIn, isAuthr, validateItem } = require('./middleware')
 //validation schema 
 const { itemSchema, reviewSchema } = require('./schemas.js');
 
-//models MongoDB
-// const Vehicle = require('./models/vehicle');
-// const Review = require('./models/review');
-
-//router links e
+//router links 
 const listsRoute = require('./routes/lists');
 const aboutRoute = require('./routes/about');
 const contactRoute = require('./routes/contact');

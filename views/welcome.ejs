@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehicle Shows</title>
+    <title>Item Inventory</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
         integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link rel="stylesheet" href="/stylesheets/home.css">
@@ -16,7 +16,6 @@
 </head>
 <style>
     body {
-        /* background-image: url('https://i.pinimg.com/originals/c0/e0/ee/c0e0ee9ce443a0538f66eb8bdbcd37c1.jpg'); */
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
@@ -57,9 +56,9 @@
             <div>
                 <nav class="nav nav-masthead justify-content-center float-md-right">
                     <a class="nav-link active" aria-current="page" href="" id="navPage">Home</a>
-                    <a class="nav-link" href="/about" id="navPage">About us</a>
+                    <a class="nav-link" href="/about" id="navPage">About</a>
                     <a class="nav-link" href="/contact" id="navPage">Contact</a>
-                    <a class="nav-link" href="/lists" id="navPage"> Favorite Lists</a>
+                    <a class="nav-link" href="/lists" id="navPage"> All Item Lists</a>
                     <% if(!currentUser) { %>
                     <a class="nav-link" href="/login" id="navPage">Login</a>
                     <a class="nav-link" href="/register" id="navPage">Register</a>
@@ -73,9 +72,9 @@
         <br>
         <main class="px-3" style="margin-top: 18rem">
             <h1 id="mainTitle">Inventory Tracking</h1>
-            <p class="lead"> Welcome to to the car show! <br> Jump right in and explore our many vehicles. <br>
+            <p class="lead"> Welcome to to the inventory tracking page! <br> Jump right in and Store your items <br>
                 Feel free to share some of your own and comment on others!</p>
-            <a href="/search" class="btn btn-info font-weight-bold border-white">Search For</a>
+            <a href="/login" class="btn btn-info font-weight-bold border-white">Add Your Items</a>
         </main>
     </div>
 
