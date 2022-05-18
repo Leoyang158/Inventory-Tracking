@@ -6,7 +6,7 @@
     }
 </style>
 <div class="row">
-    <h1 class="text-center">New Vehicle</h1>
+    <h1 class="text-center">New Item</h1>
     <div class="col-6 offset-3">
         <form action="/lists" method="POST" novalidate class="validated-form">
             <div class="mb-3">
@@ -17,16 +17,16 @@
                 </div>
             </div>
             <div class="mb-3">        
-                <label class="form-label" for='year'> Year </label>
-                <input class="form-control" type="text" id="year" name="car[year]" required>
+                <label class="form-label" for='year'> Amount </label>
+                <input class="form-control" type="number" id="year" name="car[year]" required>
             </div>
             <div class="mb-3">
-                <label class="form-label" for='make'> Make </label>
-                <input class="form-control" type="text" id="make" name="car[make]" required>
+                <label class="form-label" for='make'> Started Date </label>
+                <input class="form-control" type="date" id="make" name="car[make]" required>
             </div>
             <div class="mb-3">
-                <label class="form-label" for='type'> Type </label>
-                <input class="form-control" type="text" id="type" name="car[type]" required>
+                <label class="form-label" for='type'> Expired Date </label>
+                <input class="form-control" type="date" id="type" name="car[type]" required>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="url">Picture URL</label>
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="mb-3">
-                <button class="btn btn-success">Add New Car</button>
+                <button class="btn btn-success">Add New Item</button>
             </div>
         </form>
         <a href="/lists" id="allList">All Lists</a>

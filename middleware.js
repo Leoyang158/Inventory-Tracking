@@ -1,6 +1,6 @@
-const { vehicleSchema, reviewSchema } = require('./schemas.js');
+const { itemSchema, reviewSchema } = require('./schemas.js');
 const ExpressError = require('./utils/ExpressError');
-const Vehicle = require('./models/vehicle');
+const Item = require('./models/item');
 const Review = require('./models/review');
 
 
@@ -14,8 +14,8 @@ module.exports.isLoggedIn = (req, res, next) => {
     next();
 }
 
-module.exports.validateVehicle = (req, res, next) => {
-    const { error } = vehicleSchema.validate(req.body);
+module.exports.validateItem = (req, res, next) => {
+    const { error } = itemSchema.validate(req.body);
     if (error) {
         const msg = error.details.map(el => el.message).join(',')
         throw new ExpressError(msg, 400)
@@ -26,7 +26,7 @@ module.exports.validateVehicle = (req, res, next) => {
 
 module.exports.isAuthor = async(req, res, next) => {
     const { id } = req.params;
-    const car = await Vehicle.findById(id);
+    const car = await Item.findById(id);
     if(!car.author.equals(req.user._id)){ //check whether the user is the same first, if not generate an error
         req.flahs('error', 'You do not have permission to do that!!!')
         return res.redirect('/lists/${id}')

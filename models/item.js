@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Review = require('./review')
 const Schema = mongoose.Schema;
 
-const ItemSchema = new Schema({
+const itemSchema = new Schema({
     // year: String,
     // make: String,
     // model: String,
@@ -36,7 +36,7 @@ const ItemSchema = new Schema({
     ]
 });
 
-ItemSchema.post('findOneAndDelete', async function (doc) {
+itemSchema.post('findOneAndDelete', async function (doc) {
     if (doc) {
         await Review.deleteMany({
             _id: {
@@ -46,4 +46,4 @@ ItemSchema.post('findOneAndDelete', async function (doc) {
     }
 })
 
-module.exports = mongoose.model("Item", ItemSchema);
+module.exports = mongoose.model("Item", itemSchema);

@@ -4,7 +4,7 @@ const router = express.Router();
 const catchAsync = require('../utils/catchAsync');
 // const ExpressError = require('../utils/ExpressError');
 
-const { isLoggedIn, isAuthor, validateItem, validateItem } = require('../middleware');
+const { isLoggedIn, isAuthor, validateItem, validateReview } = require('../middleware');
 const Item = require('../models/item');
 
 const lists = require('../controllers/lists');
@@ -15,7 +15,6 @@ router.route('/')
     .get(catchAsync(lists.index))
     // post the info to the following page
     .post(isLoggedIn, validateItem, catchAsync(lists.createItem))
-
 
 router.get('/new', isLoggedIn, lists.renderNewForm)
 

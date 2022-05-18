@@ -14,10 +14,10 @@ const catchAsync = require('./utils/catchAsync');
 const ExpressError = require('./utils/ExpressError');
 
 //middleware
-const { isLoggedIn, isAuthr, validateVehicle } = require('./middleware')
+const { isLoggedIn, isAuthr, validateItem } = require('./middleware')
 
 //validation schema 
-const { vehicleSchema, reviewSchema } = require('./schemas.js');
+const { itemSchema, reviewSchema } = require('./schemas.js');
 
 //models MongoDB
 // const Vehicle = require('./models/vehicle');
@@ -86,10 +86,10 @@ passport.deserializeUser(User.deserializeUser());
 
 
 app.use((req, res, next) => {
-    console.log(req.session)
+    console.log(req.session);
     res.locals.currentUser = req.user;
     res.locals.success = req.flash('success');
-    res.locals.error = req.flash('error')
+    res.locals.error = req.flash('error');
     next();
 })
 

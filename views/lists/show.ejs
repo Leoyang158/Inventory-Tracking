@@ -1,24 +1,23 @@
 <% layout('layouts/boilerplate')%>
 <link rel="stylesheet" href="\stylesheet\star.css">
-<a href="/lists" type="button" class="btn btn-outline-light">Going Back</a>
+<a href="/lists" type="button" class="btn btn-outline-light">Back</a>
 <div class="row">
     <div class="col-6">
         <div class="card mb-3">
-                <img src="<%= car.url %>" class="card-img-top" alt="Loading">
+                <img src="<%= good.url %>" class="card-img-top" alt="Loading">
             <div class="card-body">
-                <h3 class="card-text"><%= car.make%></h3>
-                <p class="card-title"><%= car.model %></p>
+                <h3 class="card-text"><%= good.item%></h3>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Item Name: <%= car.model%></li>
-                <li class="list-group-item">Item Amount: <%= car.type%></li>
-                <li class="list-group-item">Start Date: <%= car.year %></li>
-                <li class="list-group-item">Like by <%= car.author.username %></li>
+                <li class="list-group-item">Item Amount: <%= good.amount %></li>
+                <li class="list-group-item">Start Date: <%= good.startedDate %></li>
+                <li class="list-group-item">Ended Date: <%= good.expiredDate %></li>
+                <li class="list-group-item">Like by <%= good.author.username %></li>
             </ul>
-            <% if( currentUser && car.author.equals(currentUser._id)) { %>
+            <% if( currentUser && good.author.equals(currentUser._id)) { %>
             <div class="card-body">
-                <a class="card-link btn btn-info" href="/lists/<%=car._id%>/edit">Edit</a>
-                <form class="d-inline" action="/lists/<%=car._id%>?_method=DELETE" method="POST">
+                <a class="card-link btn btn-info" href="/lists/<%=good._id%>/edit">Edit</a>
+                <form class="d-inline" action="/lists/<%=good._id%>?_method=DELETE" method="POST">
                     <button class="btn btn-danger">Delete</button>
                 </form>
             </div>
@@ -32,7 +31,7 @@
     <div class="col-6">
         <% if(currentUser) { %>
         <h2>Leave a Review</h2>
-        <form action="/lists/<%=car._id%>/reviews" method="POST" class="mb-3 validated-form" novalidate>
+        <form action="/lists/<%=good._id%>/reviews" method="POST" class="mb-3 validated-form" novalidate>
             <div class="mb-3">
             <fieldset class="starability-heart">
                 <legend>First rating:</legend>
@@ -59,7 +58,7 @@
             <button class="btn btn-success">Submit</button>
         </form>
         <% } %>
-        <% for(let review of car.reviews) { %>
+        <% for(let review of good.reviews) { %>
         <div class="card mb-3 ">
             <div class="card-body">
                 <h3>Rated element name</h3>
@@ -69,7 +68,7 @@
                 <p class="card-text">Review: <%= review.body %></p>
                 <p class='card-subtitle mb-2 text-muted'>By <%= review.author.username %></p>
                 <% if( currentUser && review.author.equals(currentUser._id)) {%>
-                <form action="/lists/<%=car._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
+                <form action="/lists/<%=good._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
                     <button class="btn btn-sm btn-danger">Delete</button>
                 </form>
                 <% } %>
